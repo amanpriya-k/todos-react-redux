@@ -7,14 +7,19 @@ class TodoList extends React.Component {
   constructor(props) {
     super(props);
   }
+
+  componentDidMount() {
+    this.props.fetchTodos();
+  }
+
   render(){
     return(
       <div>
-        <TodoForm receiveTodo={this.props.receiveTodo}/>
+        <TodoForm createTodo={this.props.createTodo} errors={this.props.errors}/>
         <h1>Todo list here</h1>
         <ul>
           { this.props.todos.map(
-            (todo) => <TodoListItem key={todo.id} todo={todo}/>
+            (todo) => <TodoListItem key={todo.id} todo={todo} destroyTodo={this.props.destroyTodo}/>
           ) }
         </ul>
       </div>

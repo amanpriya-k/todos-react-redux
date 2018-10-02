@@ -5,6 +5,7 @@ class Api::TodosController < ApplicationController
   end
 
   def create
+
     @todo = Todo.new(todo_params)
     if @todo.save
       render json: @todo
@@ -15,6 +16,7 @@ class Api::TodosController < ApplicationController
 
   def update
     @todo = Todo.find(params[:id])
+    # debugger
     if @todo.update(todo_params)
       render json: @todo
     else

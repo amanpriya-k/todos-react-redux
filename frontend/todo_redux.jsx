@@ -4,17 +4,21 @@ import {configureStore} from './store/store';
 import { receiveTodo, receiveTodos } from './actions/todo_actions';
 import Root from './components/root';
 import { allTodos } from './reducers/selectors';
-
+import { fetchTodos, createTodo, updateTodo, destroyTodo } from './actions/todo_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
-  // debugger
-  console.log('in function');
   const store = configureStore();
+
   window.store = store;
   window.receiveTodo = receiveTodo;
   window.receiveTodos = receiveTodos;
   window.allTodos = allTodos;
-  const root = document.getElementById('root');
+  window.fetchTodos = fetchTodos;
+  window.createTodo = createTodo;
+  window.updateTodo = updateTodo;
+  window.destroyTodo = destroyTodo;
+
+  const root = document.getElementById('content');
   ReactDOM.render(
     <Root store={store}/>, root);
 });
