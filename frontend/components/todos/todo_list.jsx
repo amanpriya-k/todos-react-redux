@@ -19,7 +19,11 @@ class TodoList extends React.Component {
         <h1>Todo list here</h1>
         <ul>
           { this.props.todos.map(
-            (todo) => <TodoListItem key={todo.id} todo={todo} destroyTodo={this.props.destroyTodo}/>
+            (todo) => <TodoListItem
+              key={todo.id}
+              todo={todo}
+              destroyTodo={this.props.destroyTodo}
+              updateTodo={this.props.updateTodo}/>
           ) }
         </ul>
       </div>

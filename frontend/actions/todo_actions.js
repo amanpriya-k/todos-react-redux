@@ -1,19 +1,15 @@
 export const RECEIVE_TODOS = 'RECEIVE_TODOS';
 export const RECEIVE_TODO = 'RECEIVE_TODO';
-<<<<<<< HEAD
 export const REMOVE_TODO = 'REMOVE_TODO';
 
 import * as TodoApiUtil from '../util/todo_api_util';
 import {receiveErrors} from './error_actions';
-=======
->>>>>>> 9d60c20955123ea5fe2e066c3f61d89c5e006bf3
 
 export const receiveTodos = (todos) => ({
   type: RECEIVE_TODOS,
   todos
 });
 
-<<<<<<< HEAD
 export const receiveTodo = (todo) => {
   return { type: RECEIVE_TODO,
   todo };
@@ -53,9 +49,3 @@ export const createTodo = (todo) => (dispatch) => {
 
          );
 };
-=======
-export const receiveTodo = (todo) => ({
-  type: RECEIVE_TODO,
-  todo
-});
->>>>>>> 9d60c20955123ea5fe2e066c3f61d89c5e006bf3
