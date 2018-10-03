@@ -298,17 +298,34 @@ function (_React$Component) {
   _inherits(TodoList, _React$Component);
 
   function TodoList(props) {
+<<<<<<< HEAD
     _classCallCheck(this, TodoList);
 
     return _possibleConstructorReturn(this, _getPrototypeOf(TodoList).call(this, props));
+=======
+    var _this;
+
+    _classCallCheck(this, TodoList);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(TodoList).call(this, props));
+    _this.todos = props.todos;
+    _this.receiveTodo = props.receiveTodo; // debugger
+
+    return _this;
+>>>>>>> 9d60c20955123ea5fe2e066c3f61d89c5e006bf3
   }
 
   _createClass(TodoList, [{
     key: "render",
     value: function render() {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_todo_form__WEBPACK_IMPORTED_MODULE_2__["default"], {
+<<<<<<< HEAD
         receiveTodo: this.props.receiveTodo
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Todo list here"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, this.props.todos.map(function (todo) {
+=======
+        receiveTodo: this.receiveTodo
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Todo list here"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, this.todos.map(function (todo) {
+>>>>>>> 9d60c20955123ea5fe2e066c3f61d89c5e006bf3
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_todo_list_item__WEBPACK_IMPORTED_MODULE_1__["TodoListItem"], {
           key: todo.id,
           todo: todo
@@ -463,6 +480,7 @@ var initialState = {
 var todosReducer = function todosReducer() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : initialState;
   var action = arguments.length > 1 ? arguments[1] : undefined;
+<<<<<<< HEAD
   Object.freeze(state);
 
   switch (action.type) {
@@ -471,6 +489,14 @@ var todosReducer = function todosReducer() {
       var newState = _defineProperty({}, action.todo.id, action.todo);
 
       return Object.assign({}, newState, state);
+=======
+
+  switch (action.type) {
+    case _actions_todo_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_TODO"]:
+      var newState = _defineProperty({}, action.todo.id, action.todo);
+
+      return lodash_merge__WEBPACK_IMPORTED_MODULE_1___default()(newState, state);
+>>>>>>> 9d60c20955123ea5fe2e066c3f61d89c5e006bf3
 
     case _actions_todo_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_TODOS"]:
       var temp = {};
